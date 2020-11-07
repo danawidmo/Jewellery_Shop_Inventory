@@ -1,10 +1,12 @@
 import unittest
 from models.product import Product
+from models.designer import Designer
 
 class TestProduct(unittest.TestCase):
     def setUp(self):
 
-        self.product = Product('Gold Ring', 'Golden ring with garnet stone', 10, 100, 200 )
+        self.designer = Designer('Dana', 'dana@gmail.com', '1')
+        self.product = Product('Gold Ring', 'Golden ring with garnet stone', 10, 100, 200, self.designer, 3)
 
     def test_product_has_name(self):
         self.assertEqual('Gold Ring', self.product.name)
@@ -20,3 +22,9 @@ class TestProduct(unittest.TestCase):
 
     def test_product_has_price(self):
         self.assertEqual(200, self.product.price)
+
+    def test_product_has_designer(self):
+        self.assertEqual('Dana', self.product.designer.name)
+
+    def test_product_has_id(self):
+        self.assertEqual(3, self.product.id)
