@@ -4,8 +4,8 @@ DROP TABLE IF EXISTS designers;
 CREATE TABLE designers (
     id SERIAL PRIMARY KEY,
     designer_name VARCHAR(255),
-    email VARCHAR(255),
-)
+    email VARCHAR(255)
+);
 
 CREATE TABLE products (
     id SERIAL PRIMARY KEY,
@@ -15,4 +15,4 @@ CREATE TABLE products (
     cost INT,
     price INT,
     desiner_id INT REFERENCES designers(id)
-)
+);
