@@ -1,9 +1,8 @@
 class Designer:
-    def __init__(self, name, email, id = None):
-        self.name = name
+    def __init__(self, designer_name, email, id = None):
+        self.designer_name = designer_name
         self.email = email
         self.id =id
-        self.products = []
 
     def designer_detail(self):
-        return f'Name: {self.name} Email: {self.email}'
+        return f'Name: {self.designer_name} Email: {self.email}'
