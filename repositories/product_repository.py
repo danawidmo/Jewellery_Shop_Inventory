@@ -22,10 +22,15 @@ def select_all():
     for row in results:
     
         designer = designer_repository.select(row['designer_id'])
-        product = Product(row['product_name'], row['description'],row['quantity'], row['cost'], row['price'], designer.id, )
+        product = Product(row['product_name'], row['description'],row['quantity'], row['cost'], row['price'], designer.id )
         products.append(product)
     return products
 
 def delete_all():
     sql = "DELETE FROM designers"
     run_sql(sql)
+
+def update(product):
+    sql = "UPDATE products SET (product_name, description, quantity, cost, price, designer_id)=(%s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values =[product.product_name, product.description, product.quantity, product.cost, product.price, product.designer_id, product.id]
+    run_sql(sql, values)

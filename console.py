@@ -21,4 +21,11 @@ product2 = Product('Silver Ring', 'Silver ring with amethyst stone', 8, 90, 180,
 product_repository.save(product1)
 product_repository.save(product2)
 
+designer2.email = 'toni23@gmail.com'
+designer_repository.update(designer2)
+
+product1.quantity = 20
+product_repository.update(product1)
+
+print(product1.quantity)
 

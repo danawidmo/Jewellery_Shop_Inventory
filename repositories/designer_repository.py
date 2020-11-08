@@ -35,3 +35,10 @@ def select(id):
 def delete_all():
     sql = "DELETE FROM designers"
     run_sql(sql)
+
+def update(designer):
+    sql = "UPDATE designers SET (designer_name, email)=(%s, %s) WHERE id = %s"
+    values = [designer.designer_name, designer.email, designer.id]
+    run_sql(sql,values)
+
+    
