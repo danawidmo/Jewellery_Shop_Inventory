@@ -9,3 +9,29 @@ def save(designer):
     id = results[0]['id']
     designer.id =id
     return designer
+
+
+def select_all():
+    designers =[]
+    sql = "SELECT * from designers"
+    results = run_sql(sql)
+
+    for row in results:
+        designer = Designer(row['designer_name'], row['email'], row['id'])
+        designers.append(designer)
+    return designers
+
+
+def select(id):
+    designer = None
+    sql = "SELECT * FROM designers WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+  
+    if result is not None:
+        designer = Designer(result['designer_name'], result['email'], result['id'])
+    return designer
+
+def delete_all():
+    sql = "DELETE FROM designers"
+    run_sql(sql)

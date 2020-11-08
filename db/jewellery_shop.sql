@@ -1,6 +1,8 @@
 DROP TABLE IF EXISTS products;
 DROP TABLE IF EXISTS designers;
 
+
+
 CREATE TABLE designers (
     id SERIAL PRIMARY KEY,
     designer_name VARCHAR(255),
@@ -14,5 +16,5 @@ CREATE TABLE products (
     quantity INT,
     cost INT,
     price INT,
-    designer_id INT REFERENCES designers(id)
+    designer_id INT REFERENCES designers(id) ON DELETE CASCADE
 );

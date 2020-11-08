@@ -1,6 +1,6 @@
 from db.run_sql import run_sql
-from models.designer import Designer
 from models.product import Product
+import repositories.designer_repository as designer_repository
 
 
 def save(product):
@@ -13,3 +13,19 @@ def save(product):
     product.id = id
     return product
 
+def select_all():
+    products = []
+
+    sql = 'SELECT * FROM products'
+    results = run_sql(sql)
+
+    for row in results:
+    
+        designer = designer_repository.select(row['designer_id'])
+        product = Product(row['product_name'], row['description'],row['quantity'], row['cost'], row['price'], designer.id, )
+        products.append(product)
+    return products
+
+def delete_all():
+    sql = "DELETE FROM designers"
+    run_sql(sql)
