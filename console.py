@@ -1,3 +1,4 @@
+
 from models.designer import Designer
 from models.product import Product
 
@@ -16,4 +17,5 @@ product2 = Product('Silver Ring', 'Silver ring with amethyst stone', 8, 90, 180,
 
 product_repository.save(product1)
 product_repository.save(product2)
+
 

@@ -14,5 +14,5 @@ CREATE TABLE products (
     quantity INT,
     cost INT,
     price INT,
-    desiner_id INT REFERENCES designers(id)
+    designer_id INT REFERENCES designers(id)
 );
