@@ -7,7 +7,7 @@
     <p>{{product.description}}</p>
         {% for designer in designers %}
             {% if designer.id == product.designer_id %}
-               <p><a href='designer/{{designer.id}}'>by {{designer.designer_name}}</a></p>
+               <p><a href='designers/{{designer.id}}'>by {{designer.designer_name}}</a></p>
             {% endif %}
         {% endfor%}
     <hr>

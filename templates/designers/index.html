@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content%}
+    <h2>Designers</h2>
+    {% for designer in designers%}
+     <div>
+         <p>{{designer.designer_name}}</p>
+         <p>{{designer.email}}</p>
+         <button class="material-icons">delete</button>
+        <button class="material-icons">edit</button>
+        <button class="material-icons">add</button>
+     </div>
+    {% endfor%}
+{%endblock%}
