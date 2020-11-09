@@ -1,0 +1,35 @@
+
+{% extends "base.html" %}
+{% block content%}
+    <form action='/new', method="POST"></id>
+        <div>
+            <label for='product_name'>Name:</label>
+            <input type ='text' id='product_name' name='product_name' placeholder='Name' required autofocus>
+        </div>
+        <div>
+            <label for='description'>Description:</label>
+            <input type='text' id='description' name='description' placeholder='Description' required autofocus>
+        </div>
+        <div>
+            <label for='quantity'>Quantity:</label>
+            <input type='number' id='quantity' name='quantity' placeholder='Quantity' required autofocus>
+        </div>
+        <div>
+            <label for='cost'>Cost:</label>
+            <input type='number' id='cost' name='cost' placeholder='Cost' required autofocus>
+        </div>
+        <div>
+            <label for='price'>Price:</label>
+            <input type='number' id='price' name='price' placeholder='Price' required autofocus>
+        </div>
+        <div>
+            <label for='designer'>Designer:</label>
+            <select id='designer' name='designer'>
+            {% for designer in designers%}
+                <option value="{{designer.id}}">{{designer.designer_name}}</option>
+            {% endfor %}
+            </select>
+        </div>
+        <button type="submit">Add</button>
+    </form>
+{% endblock %}

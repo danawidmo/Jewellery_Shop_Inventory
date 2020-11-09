@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content%}
+<a href="/new">Add New Product</a>
 {% for product in products%}
    <section class = 'inventory_item'>
         <a href="/products/{{product.id}}">
