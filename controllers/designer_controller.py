@@ -13,6 +13,12 @@ def designers():
 
 # SHOW
 @designer_blueprint.route("/designers/<id>")
-def designer(id):
+def show_designer(id):
     designer = designer_repository.select(id)
     return render_template('designers/show.html', designer=designer)
+
+# EDIT
+@designer_blueprint.route("/designers/<id>/edit")
+def edit_designer(id):
+    designer = designer_repository.select(id)
+    return render_template('designers/edit.html', designer=designer)

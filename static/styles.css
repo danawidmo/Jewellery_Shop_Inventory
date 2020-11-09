@@ -12,7 +12,7 @@ header {
     border-style: solid;
 }
 
-.inventory_item > img {
+.inventory_item > a > img {
     height: 50px;
     width: 50px;
 }
