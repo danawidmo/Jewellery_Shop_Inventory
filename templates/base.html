@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/styles.css">
+    <title>Jewellery Shop</title>
+</head>
+<body>
+    <header>
+        <h1>jewells.com</h1>
+        <section>
+            <input type="text" placeholder="Search Inventory">
+            <label for="filter">Filter</label>
+        <select name="filter" id="filter">
+            <option value="designer">by Designer</option>
+            <option value="collection">by Collection</option>
+            <option value="kind">by Kind</option>
+        </select>
+        </section>
+    </header>
+    <nav>
+        <ul>
+            <li>Account</li>
+            <li>Inbox</li>
+            <li>Shop Front</li>
+            <li>Blog</li>
+            <li>Inventory</li>
+        </ul>
+    </nav>
+    {% block content%}
+
+    {% endblock %}
+</body>
+</html>
