@@ -33,3 +33,21 @@ def update_designer(id):
     designer = Designer(designer_name, email, id)
     designer_repository.update(designer)
     return redirect('/designers')
+
+# CREATE
+# GET
+@designer_blueprint.route("/designers/new")
+def new_designer():
+    return render_template("designers/new.html")
+
+# CREATE POST
+@designer_blueprint.route("/designers/new", methods = ['POST'])
+def create_designer():
+    designer_name = request.form['designer_name']
+    email = request.form['email']
+    designer = Designer(designer_name, email)
+    designer_repository.save(designer)
+    return redirect('/designers')
+
+
+
