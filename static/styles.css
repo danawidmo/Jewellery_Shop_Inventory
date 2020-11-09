@@ -7,3 +7,12 @@
 header {
     display: flex;
 }
+
+.inventory_item {
+    border-style: solid;
+}
+
+.inventory_item > img {
+    height: 50px;
+    width: 50px;
+}

@@ -27,5 +27,4 @@ designer_repository.update(designer2)
 product1.quantity = 20
 product_repository.update(product1)
 
-print(product1.quantity)
 

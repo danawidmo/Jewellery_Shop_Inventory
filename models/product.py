@@ -1,3 +1,6 @@
+from models.designer import Designer
+
+
 class Product:
     def __init__(self,  product_name, description, quantity, cost, price, designer_id, id = None,):
         self.id = id
@@ -7,4 +10,3 @@ class Product:
         self.cost = cost
         self.price = price
         self.designer_id = designer_id
-        

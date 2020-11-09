@@ -1,13 +1,22 @@
 {% extends "base.html" %}
-
 {% block content%}
-   <section>
-    <p>Name</p>
-    <p>Description</p>
-    <p>Designer</p>
+{% for product in products%}
+   <section class = 'inventory_item'>
+    <img src='https://images.unsplash.com/photo-1598560917807-1bae44bd2be8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80'>
+    <p>{{product.product_name}}</p>
+    <p>{{product.description}}</p>
+        {% for designer in designers %}
+            {% if designer.id == product.designer_id %}
+               <p>by {{designer.designer_name}}</p>
+            {% endif %}
+        {% endfor%}
     <hr>
-    <p>Cost</p>
-    <p>Price</p>
-    <p>Quantity</p>
+    <p>{{product.cost}}</p>
+    <p>{{product.price}}</p>
+    <p>{{product.quantity}}</p>
+    <button class="material-icons">delete</button>
+    <button class="material-icons">edit</button>
+    <button class="material-icons">add</button>
    </section>
+{% endfor%}
 {% endblock %}
