@@ -1,5 +1,6 @@
-from flask import render_template, request, Blueprint
+from flask import render_template, request, Blueprint, redirect
 import repositories.designer_repository as designer_repository
+from models.designer import Designer
 
 designer_blueprint = Blueprint('designers', __name__)
 
@@ -22,3 +23,13 @@ def show_designer(id):
 def edit_designer(id):
     designer = designer_repository.select(id)
     return render_template('designers/edit.html', designer=designer)
+
+# UPDATE
+
+@designer_blueprint.route("/designers/<id>", methods = ['POST'])
+def update_designer(id):
+    designer_name = request.form['designer_name']
+    email = request.form['email']
+    designer = Designer(designer_name, email, id)
+    designer_repository.update(designer)
+    return redirect('/designers')

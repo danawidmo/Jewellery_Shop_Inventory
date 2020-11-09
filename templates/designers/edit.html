@@ -1,6 +1,14 @@
 {% extends "base.html" %}
 {% block content%}
-    <section>
-      <p>edit designer</p>
-    </section>
+    <form action='/designers/{{designer.id}}', method="POST"></id>
+        <div>
+            <label for='designer_name'>Name:</label>
+            <input type ='text' id='designer_name' name='designer_name' value="{{designer.designer_name}}" required autofocus>
+        </div>
+        <div>
+            <label for='email'>Email:</label>
+            <input type='text' id='email' name='email' value='{{designer.email}}' required autofocus>
+        </div>
+        <button type="submit">Update</button>
+    </form>
 {% endblock %}
