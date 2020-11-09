@@ -11,9 +11,8 @@ def designers():
     designers = designer_repository.select_all()
     return render_template('designers/index.html',designers=designers)
 
-# 
+# SHOW
 @designer_blueprint.route("/designers/<id>")
 def designer(id):
     designer = designer_repository.select(id)
     return render_template('designers/show.html', designer=designer)
-# line 10 in index.html <a href='designers/{{designer.id}}'>

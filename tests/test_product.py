@@ -23,8 +23,8 @@ class TestProduct(unittest.TestCase):
     def test_product_has_price(self):
         self.assertEqual(200, self.product.price)
 
-    def test_product_has_designer_id(self):
-        self.assertEqual(1, self.product.designer_id.id)
+    def test_product_has_designer(self):
+        self.assertEqual(1, self.product.designer.id)
 
     def test_product_has_id(self):
         self.assertEqual(3, self.product.id)
