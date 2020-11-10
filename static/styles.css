@@ -16,6 +16,11 @@ section {
     text-align: left;
 }
 
+body > section >img {
+    height: 50px;
+    width: 50px;
+}
+
 header {
     display: flex;
 }
@@ -46,16 +51,23 @@ button {
     background-color: rgb(236, 221, 193);
 }
 
-body > article{
+.inventory_list > article{
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     color: rgb(33, 38, 43);
     margin-top: 50px;
+    justify-content: center;
+    
+}
+
+.inventory_list{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 article > section {
-    flex-basis: 20%;
+    flex-basis: 25%;
 }
 
 section > input {
@@ -99,7 +111,9 @@ form > button {
     background-color: rgb(236, 221, 193);
 }
 
-
+.product_top{
+    display: flex;
+}
 .inventory_item {
     border-style: solid;
     border-radius: 5px;
@@ -108,7 +122,7 @@ form > button {
     padding: 15px;
 }
 
-.inventory_item > a > img {
+.inventory_item img {
     height: 50px;
     width: 50px;
 }
@@ -134,4 +148,39 @@ form > button {
     border-radius: 10px;
     border-width: 1px;
     background-color: rgb(236, 221, 193);
+}
+
+.designers_list {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.quantity {
+    display: flex;
+    flex-direction: row;
+}
+
+.quantity p{
+    margin-right: 5px;
+}
+
+.low_stock{
+    color: #a75f0e;
+}
+
+.out_of_stock{
+   color: #8b2202;
+}
+
+.name_by_designer p {
+    margin-top: 0px;
+    margin-left: 5px;
+    margin-bottom: 0px;
+}
+
+.name_by_designer a {
+    margin-top: 0px;
+    margin-left: 5px;
+    font-size: 15px;
+    font-style: italic;
 }
