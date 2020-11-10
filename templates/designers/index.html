@@ -2,13 +2,13 @@
 {% block content%}
     <h2>Designers</h2>
     {% for designer in designers%}
-     <div>
-         <p>{{designer.designer_name}}</p>
+     <section>
+         <h3>{{designer.designer_name}}</h3>
          <p>{{designer.email}}</p>
-         <button class="material-icons">delete</button>
-         <a href='/designers/{{designer.id}}/edit' class="material-icons">edit</a>
-        <button class="material-icons">add</button>
-     </div>
+         <button class="material-icons red">delete</button>
+         <a href='/designers/{{designer.id}}/edit' class="material-icons orange">edit</a>
+        <button class="material-icons green">add</button>
+     </section>
     {% endfor%}
     <a href='/designers/new'>Add New Designer</a>
 {%endblock%}
