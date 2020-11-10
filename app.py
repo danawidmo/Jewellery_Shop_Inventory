@@ -13,7 +13,7 @@ app.register_blueprint(designer_blueprint)
 app.register_blueprint(product_blueprint)
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def home():
     products = product_repository.select_all()
     designers = designer_repository.select_all()
