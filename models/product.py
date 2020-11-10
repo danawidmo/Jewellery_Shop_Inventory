@@ -18,3 +18,9 @@ class Product:
             return True
         else:
             return False
+
+    def out_of_stock(self):
+        if self.quantity <= 0:
+            return True
+        else:
+            return False

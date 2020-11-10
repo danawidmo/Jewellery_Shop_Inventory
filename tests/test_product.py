@@ -36,3 +36,9 @@ class TestProduct(unittest.TestCase):
 
     def test_low_stock_is_0(self):
         self.assertEqual(False, self.product3.low_stock())
+
+    def test_out_of_stock_true(self):
+        self.assertEqual(True, self.product3.out_of_stock())
+
+    def test_out_of_stock_fasle(self):
+        self.assertEqual(False, self.product2.out_of_stock())
