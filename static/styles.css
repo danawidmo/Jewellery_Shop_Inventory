@@ -1,18 +1,106 @@
 
-.logo {
-    height: 50px;
-    width: 60px;
+body {
+    background-color: rgb(238, 242, 245);
+    font-family: 'Work Sans', sans-serif;
+    font-size: large;
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    margin-left: 20px ;
+    margin-bottom: 20px;
 }
 
 header {
     display: flex;
 }
 
+form {
+    margin-left: 50px;
+}
+
+select {
+    padding: 1%;
+    border-radius: 10px;
+    font-family: 'Work Sans', sans-serif;
+}
+
+body > article{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: rgb(33, 38, 43);
+}
+
+input {
+    padding: 5px;
+}
+
+article > section {
+    flex-basis: 20%;
+}
+
+section > input {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 30px;
+}
+
+section > label {
+    margin: 5px;
+}
+
+
+
+nav > ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+nav > ul > li {
+    list-style: none;
+    margin: 1%;   
+}
+
+form > div {
+    margin: 2%;
+}
+
+
+/* 
+this id is not doing anything :/
+#new_product {
+    font-style: bold;
+} */
+
 .inventory_item {
     border-style: solid;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: rgb(179, 187, 194);
+    padding: 15px;
 }
 
 .inventory_item > a > img {
     height: 50px;
     width: 50px;
+}
+
+.description{
+    font-style: italic;
+    font-size: medium;
+}
+
+.material-icons.red{ color: #8b2202; }
+.material-icons.green{ color: #346832; }
+.material-icons.orange{ color: #a75f0e; }
+
+.logo {
+    height: 50px;
+    width: 60px;
+    margin: 20px;
 }

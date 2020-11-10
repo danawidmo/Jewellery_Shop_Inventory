@@ -3,7 +3,7 @@
     <section>
         <img src='https://images.unsplash.com/photo-1598560917807-1bae44bd2be8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80'>
         <p>{{product.product_name}}</p>
-        <p>{{product.description}}</p>
+        <p class='description'>{{product.description}}</p>
            <p><a href='designers/{{product.designer.id}}'>by {{product.designer.designer_name}}</a></p>
         <hr>
         <p>Cost: {{product.cost}}</p>
@@ -15,8 +15,10 @@
         {% if product.out_of_stock() == True %}
         <p>out of stock</p>
         {% endif %}
-        <button class="material-icons">delete</button>
-        <a href="/products/{{product.id}}/edit" class="material-icons">edit</a>
-        <button class="material-icons">add</button>
+        <div class='buttons'>
+            <button class="material-icons red">delete</button>
+            <a href="/products/{{product.id}}/edit" class="material-icons orange">edit</a>
+            <button class="material-icons green">add</button>
+        </div>
     </section>
 {% endblock %}
