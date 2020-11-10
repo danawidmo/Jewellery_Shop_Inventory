@@ -5,12 +5,18 @@
         <p>{{product.product_name}}</p>
         <p>{{product.description}}</p>
            <p><a href='designers/{{product.designer.id}}'>by {{product.designer.designer_name}}</a></p>
-<hr>
-<p>{{product.cost}}</p>
-<p>{{product.price}}</p>
-<p>{{product.quantity}}</p>
-<button class="material-icons">delete</button>
-<button class="material-icons">edit</button>
-<button class="material-icons">add</button>
+        <hr>
+        <p>Cost: {{product.cost}}</p>
+        <p>Price: {{product.price}}</p>
+        <p>Quantity: {{product.quantity}}</p>
+        {% if product.low_stock() == True %}
+        <p>low stock</p>
+        {% endif %}
+        {% if product.out_of_stock() == True %}
+        <p>out of stock</p>
+        {% endif %}
+        <button class="material-icons">delete</button>
+        <a href="/products/{{product.id}}/edit" class="material-icons">edit</a>
+        <button class="material-icons">add</button>
     </section>
 {% endblock %}
