@@ -4,5 +4,5 @@ class Designer:
         self.email = email
         self.id =id
 
-    def designer_detail(self):
+    def detail(self):
         return f'Name: {self.designer_name} Email: {self.email}'

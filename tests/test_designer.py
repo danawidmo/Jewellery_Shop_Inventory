@@ -13,7 +13,7 @@ class TestDesigner(unittest.TestCase):
     def test_designer_has_email(self):
         self.assertEqual('claire@gmail.com', self.designer.email)
 
-    def test_designer_detail(self):
+    def test_detail(self):
         self.assertEqual('Name: Claire Email: claire@gmail.com', self.designer.designer_detail())
     
     def test_designer_has_id(self):
