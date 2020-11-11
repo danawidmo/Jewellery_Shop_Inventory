@@ -26,6 +26,20 @@ def select_all():
         products.append(product)
     return products
 
+def select_all_by_designer(designer_id):
+    products =[]
+
+    sql ="SELECT * FROM products WHERE designer_id = %s"
+    value =[designer_id]
+    results =run_sql(sql, value)
+
+    for row in results:
+
+        designer = designer_repository.select(row['designer_id'])
+        product = Product(row['product_name'], row['description'],row['quantity'], row['cost'], row['price'], designer, row['id'] )
+        products.append(product)
+    return products
+
 def delete_all():
     sql = "DELETE FROM products"
     run_sql(sql)

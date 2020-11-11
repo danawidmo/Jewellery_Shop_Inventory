@@ -1,6 +1,8 @@
 from flask import render_template, request, Blueprint, redirect
 import repositories.designer_repository as designer_repository
+import repositories.product_repository as product_repository
 from models.designer import Designer
+
 
 designer_blueprint = Blueprint('designers', __name__)
 
@@ -16,7 +18,8 @@ def designers():
 @designer_blueprint.route("/designers/<id>")
 def show_designer(id):
     designer = designer_repository.select(id)
-    return render_template('designers/show.html', designer=designer)
+    products = product_repository.select_all_by_designer(id)
+    return render_template('designers/show.html', designer=designer, products=products)
 
 # EDIT
 @designer_blueprint.route("/designers/<id>/edit")
