@@ -17,6 +17,7 @@
       <p class='description'>{{product.description}}</p>
       <p>Cost: {{product.cost}}</p>
       <p>Price: {{product.price}}</p>
+      <p>Markup: {{product.calculate_markup()}}</p>
       <div class='quantity'>
          <p>Quantity: {{product.quantity}}</p>
          {% if product.low_stock() == True %}
