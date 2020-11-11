@@ -33,7 +33,8 @@ def edit_designer(id):
 def update_designer(id):
     designer_name = request.form['designer_name']
     email = request.form['email']
-    designer = Designer(designer_name, email, id)
+    status = request.form['status']
+    designer = Designer(designer_name, email, status, id)
     designer_repository.update(designer)
     return redirect('/designers')
 
