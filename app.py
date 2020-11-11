@@ -17,7 +17,8 @@ app.register_blueprint(product_blueprint)
 def home():
     products = product_repository.select_all()
     designers = designer_repository.select_all()
-    return render_template('index.html',products=products, designers=designers)
+    types= product_repository.select_types()
+    return render_template('index.html',products=products, designers=designers, types=types)
 
 if __name__ == '__main__':
     app.run(debug=True)

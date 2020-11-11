@@ -16,7 +16,7 @@ def save(product):
 def select_all():
     products = []
 
-    sql = 'SELECT * FROM products'
+    sql = 'SELECT * FROM products ORDER by id'
     results = run_sql(sql)
 
     for row in results:
@@ -27,11 +27,11 @@ def select_all():
     return products
 
 def select_all_by_designer(designer_id):
-    products =[]
+    products = []
 
-    sql ="SELECT * FROM products WHERE designer_id = %s"
-    value =[designer_id]
-    results =run_sql(sql, value)
+    sql = "SELECT * FROM products WHERE designer_id = %s"
+    value = [designer_id]
+    results = run_sql(sql, value)
 
     for row in results:
 
@@ -39,6 +39,33 @@ def select_all_by_designer(designer_id):
         product = Product(row['product_name'], row['type'], row['description'],row['quantity'], row['cost'], row['price'], designer, row['id'] )
         products.append(product)
     return products
+
+
+def select_all_by_type(type):
+    products = []
+
+    sql = "SELECT * FROM prodcuts WHERE type = %s"
+    value = [type]
+    results = run_sql(sql, value)
+
+    for row in results:
+
+        designer = designer_repository.select(row['designer_id'])
+        product = Product(row['product_name'], row['type'], row['description'],row['quantity'], row['cost'], row['price'], designer, row['id'] )
+        products.append(product)
+        
+    return products
+
+def select_types():
+    types =[]
+    sql = "SELECT type FROM products GROUP by type"
+    results =run_sql(sql)
+    
+    for result in results:
+        type = result['type']
+        types.append(type)
+
+    return types
 
 def delete_all():
     sql = "DELETE FROM products"

@@ -59,3 +59,10 @@ def update_product(id):
     product = Product(product_name, type, description, quantity, cost, price, designer, id)
     product_repository.update(product)
     return redirect('/')
+
+
+@product_blueprint.route("/products/type/<type>")
+def product_types(type):
+    products= product_repository.select_all_by_type(type)
+    designers = designer_repository.select_all()
+    return render_template('/products/type.html', products =products, designers=designers)
