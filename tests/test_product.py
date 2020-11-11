@@ -10,8 +10,8 @@ class TestProduct(unittest.TestCase):
         self.product2 = Product('Silver brooch', 'brooch','Silver ring with garnet stone', 4, 100, 200, self.designer, 3)
         self.product3 = Product('Bronze Necklace','necklace', 'Bronze ring with garnet stone', 0, 100, 200, self.designer, 3)
 
-    def test_product_has_product_name(self):
-        self.assertEqual('Gold Ring', self.product.product_name)
+    def test_product_has_name(self):
+        self.assertEqual('Gold Ring', self.product.name)
 
     def test_product_has_description(self):
         self.assertEqual('Golden ring with garnet stone', self.product.description)

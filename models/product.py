@@ -2,9 +2,9 @@ from models.designer import Designer
 
 
 class Product:
-    def __init__(self,  product_name, type, description, quantity, cost, price, designer, id = None):
+    def __init__(self,  name, type, description, quantity, cost, price, designer, id = None):
         self.id = id
-        self.product_name = product_name
+        self.name = name
         self.type = type
         self.description = description
         self.quantity = quantity

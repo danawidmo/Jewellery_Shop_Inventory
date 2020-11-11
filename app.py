@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, redirect
 
 from controllers.designer_controller import designer_blueprint
 from controllers.product_controller import product_blueprint
@@ -15,10 +15,7 @@ app.register_blueprint(product_blueprint)
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
-    products = product_repository.select_all()
-    designers = designer_repository.select_all()
-    types= product_repository.select_types()
-    return render_template('index.html',products=products, designers=designers, types=types)
+    return redirect('/products') 
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -3,8 +3,8 @@
 {% block content%}
     <form action='/new', method="POST"></id>
         <div>
-            <label for='product_name'>Name:</label>
-            <input type ='text' id='product_name' name='product_name' placeholder='Name' required autofocus>
+            <label for='name'>Name:</label>
+            <input type ='text' id='name' name='name' placeholder='Name' required autofocus>
         </div>
         <div>
             <label for='type'>Type:</label>
@@ -31,7 +31,7 @@
             <select id='designer' name='designer'>
             {% for designer in designers%}
                 {% if designer.status == 'active' %}
-                     <option value="{{designer.id}}">{{designer.designer_name}}</option>
+                     <option value="{{designer.id}}">{{designer.name}}</option>
                 {% endif %}
             {% endfor %}
             </select>

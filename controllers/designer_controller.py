@@ -31,10 +31,10 @@ def edit_designer(id):
 
 @designer_blueprint.route("/designers/<id>", methods = ['POST'])
 def update_designer(id):
-    designer_name = request.form['designer_name']
+    name = request.form['name']
     email = request.form['email']
     status = request.form['status']
-    designer = Designer(designer_name, email, status, id)
+    designer = Designer(name, email, status, id)
     designer_repository.update(designer)
     return redirect('/designers')
 
@@ -47,10 +47,10 @@ def new_designer():
 # CREATE POST
 @designer_blueprint.route("/designers/new", methods = ['POST'])
 def create_designer():
-    designer_name = request.form['designer_name']
+    name = request.form['name']
     email = request.form['email']
     status = 'active'
-    designer = Designer(designer_name, email, status)
+    designer = Designer(name, email, status)
     designer_repository.save(designer)
     return redirect('/designers')
 

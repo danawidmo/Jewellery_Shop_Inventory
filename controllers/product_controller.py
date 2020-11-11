@@ -8,6 +8,12 @@ product_blueprint = Blueprint('product', __name__)
 
 # INDEX
 # Currently this is defined in app.py could be redirecting here instead
+@product_blueprint.route("/products")
+def products():
+    products = product_repository.select_all()
+    designers = designer_repository.select_all()
+    types= product_repository.select_types()
+    return render_template('index.html',products=products, designers=designers, types=types)
 
 # SHOW
 @product_blueprint.route("/products/<id>")
@@ -26,7 +32,7 @@ def new_product():
 # POST
 @product_blueprint.route("/new", methods = ['POST'])
 def create_product():
-    product_name = request.form['product_name']
+    name = request.form['name']
     type = request.form['type']
     description =request.form['description']
     quantity = request.form['quantity']
@@ -34,7 +40,7 @@ def create_product():
     price = request.form['price']
     designer_id = request.form['designer']
     designer = designer_repository.select(designer_id)
-    product = Product(product_name, type, description, quantity, cost, price, designer)
+    product = Product(name, type, description, quantity, cost, price, designer)
     product_repository.save(product)
     return redirect('/')
 
@@ -48,7 +54,7 @@ def edit_product(id):
 # UPDATE
 @product_blueprint.route("/products/<id>", methods=['POST'])
 def update_product(id):
-    product_name = request.form['product_name']
+    name = request.form['name']
     type = request.form['type']
     description =request.form['description']
     quantity = request.form['quantity']
@@ -56,7 +62,7 @@ def update_product(id):
     price = request.form['price']
     designer_id = request.form['designer']
     designer = designer_repository.select(designer_id)
-    product = Product(product_name, type, description, quantity, cost, price, designer, id)
+    product = Product(name, type, description, quantity, cost, price, designer, id)
     product_repository.update(product)
     return redirect('/')
 

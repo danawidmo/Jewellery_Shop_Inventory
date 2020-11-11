@@ -7,8 +7,8 @@ class TestDesigner(unittest.TestCase):
     def setUp(self):
         self.designer = Designer('Claire', 'claire@gmail.com','active', 2)
        
-    def test_designer_has_designer_name(self):
-        self.assertEqual('Claire', self.designer.designer_name)          
+    def test_designer_has_name(self):
+        self.assertEqual('Claire', self.designer.name)          
      
     def test_designer_has_email(self):
         self.assertEqual('claire@gmail.com', self.designer.email)

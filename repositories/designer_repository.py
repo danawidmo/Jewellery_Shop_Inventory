@@ -3,8 +3,8 @@ from models.designer import Designer
 from models.product import Product
 
 def save(designer):
-    sql = "INSERT INTO designers (designer_name, email, status) VALUES (%s, %s, %s) RETURNING *" 
-    values = [designer.designer_name, designer.email, designer.status]
+    sql = "INSERT INTO designers (name, email, status) VALUES (%s, %s, %s) RETURNING *" 
+    values = [designer.name, designer.email, designer.status]
     results = run_sql(sql, values)
     id = results[0]['id']
     designer.id =id
@@ -17,7 +17,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        designer = Designer(row['designer_name'], row['email'], row['status'], row['id'])
+        designer = Designer(row['name'], row['email'], row['status'], row['id'])
         designers.append(designer)
     return designers
 
@@ -29,7 +29,7 @@ def select(id):
     result = run_sql(sql, values)[0]
   
     if result is not None:
-        designer = Designer(result['designer_name'], result['email'], result['status'],result['id'])
+        designer = Designer(result['name'], result['email'], result['status'],result['id'])
     return designer
 
 def delete_all():
@@ -37,8 +37,8 @@ def delete_all():
     run_sql(sql)
 
 def update(designer):
-    sql = "UPDATE designers SET (designer_name, email, status)=(%s, %s, %s) WHERE id = %s"
-    values = [designer.designer_name, designer.email, designer.status, designer.id]
+    sql = "UPDATE designers SET (name, email, status)=(%s, %s, %s) WHERE id = %s"
+    values = [designer.name, designer.email, designer.status, designer.id]
     run_sql(sql,values)
 
     
