@@ -48,7 +48,8 @@ def new_designer():
 def create_designer():
     designer_name = request.form['designer_name']
     email = request.form['email']
-    designer = Designer(designer_name, email)
+    status = 'active'
+    designer = Designer(designer_name, email, status)
     designer_repository.save(designer)
     return redirect('/designers')
 

@@ -9,6 +9,10 @@
             <label for='email'>Email:</label>
             <input type='text' id='email' name='email' value='{{designer.email}}' required autofocus>
         </div>
+        <div>
+            <label for='status'>Staus(active/inactive):</label>
+            <input type='text' id='status' name='status' value='{{designer.status}}' required autofocus>
+        </div>
         <button type="submit">Update</button>
     </form>
 {% endblock %}

@@ -6,7 +6,8 @@ DROP TABLE IF EXISTS designers;
 CREATE TABLE designers (
     id SERIAL PRIMARY KEY,
     designer_name VARCHAR(255),
-    email VARCHAR(255)
+    email VARCHAR(255),
+    status VARCHAR(255)
 );
 
 CREATE TABLE products (

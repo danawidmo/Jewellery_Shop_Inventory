@@ -8,8 +8,8 @@ import repositories.product_repository as product_repository
 designer_repository.delete_all()
 product_repository.delete_all()
 
-designer1 = Designer('Claire', 'claire@gmail.com', 1)
-designer2 = Designer('Toni', 'toni@gmail.com', 2)
+designer1 = Designer('Claire', 'claire@gmail.com','active', 1)
+designer2 = Designer('Toni', 'toni@gmail.com','active', 2)
 
 designer_repository.save(designer1)
 designer_repository.save(designer2)
