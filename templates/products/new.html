@@ -30,7 +30,9 @@
             <label for='designer'>Designer:</label>
             <select id='designer' name='designer'>
             {% for designer in designers%}
-                <option value="{{designer.id}}">{{designer.designer_name}}</option>
+                {% if designer.status == 'active' %}
+                     <option value="{{designer.id}}">{{designer.designer_name}}</option>
+                {% endif %}
             {% endfor %}
             </select>
         </div>
