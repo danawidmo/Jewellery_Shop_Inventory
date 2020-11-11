@@ -12,6 +12,7 @@ CREATE TABLE designers (
 CREATE TABLE products (
     id SERIAL PRIMARY KEY,
     product_name VARCHAR(255),
+    type VARCHAR(255)
     description TEXT,
     quantity INT,
     cost INT,
