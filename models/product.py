@@ -26,4 +26,5 @@ class Product:
             return False
 
     def calculate_markup(self):
-        pass
+        markup = self.price - self.cost
+        return markup
