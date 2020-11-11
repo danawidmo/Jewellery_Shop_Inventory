@@ -42,3 +42,6 @@ class TestProduct(unittest.TestCase):
 
     def test_out_of_stock_fasle(self):
         self.assertEqual(False, self.product2.out_of_stock())
+
+    def test_calculate_markup(self):
+        self.assertEqual(100, self.product.calculate_markup())

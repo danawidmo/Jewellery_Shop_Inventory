@@ -24,3 +24,6 @@ class Product:
             return True
         else:
             return False
+
+    def calculate_markup(self):
+        pass
