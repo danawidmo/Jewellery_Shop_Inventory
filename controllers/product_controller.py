@@ -27,13 +27,14 @@ def new_product():
 @product_blueprint.route("/new", methods = ['POST'])
 def create_product():
     product_name = request.form['product_name']
+    type = request.form['type']
     description =request.form['description']
     quantity = request.form['quantity']
     cost = request.form['cost']
     price = request.form['price']
     designer_id = request.form['designer']
     designer = designer_repository.select(designer_id)
-    product = Product(product_name, description, quantity, cost, price, designer)
+    product = Product(product_name, type, description, quantity, cost, price, designer)
     product_repository.save(product)
     return redirect('/')
 
@@ -48,12 +49,13 @@ def edit_product(id):
 @product_blueprint.route("/products/<id>", methods=['POST'])
 def update_product(id):
     product_name = request.form['product_name']
+    type = request.form['type']
     description =request.form['description']
     quantity = request.form['quantity']
     cost = request.form['cost']
     price = request.form['price']
     designer_id = request.form['designer']
     designer = designer_repository.select(designer_id)
-    product = Product(product_name, description, quantity, cost, price, designer, id)
+    product = Product(product_name, type, description, quantity, cost, price, designer, id)
     product_repository.update(product)
     return redirect('/')

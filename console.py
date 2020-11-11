@@ -15,8 +15,8 @@ designer_repository.save(designer1)
 designer_repository.save(designer2)
 
 
-product1 = Product('Gold Ring', 'Golden ring with garnet stone', 10, 100, 200, designer1.id, 1)
-product2 = Product('Silver Ring', 'Silver ring with amethyst stone', 8, 90, 180, designer2.id, 2) 
+product1 = Product('Gold Ring', 'ring','Golden ring with garnet stone', 10, 100, 200, designer1, 1)
+product2 = Product('Silver Ring', 'ring', 'Silver ring with amethyst stone', 8, 90, 180, designer2, 2) 
 
 product_repository.save(product1)
 product_repository.save(product2)
