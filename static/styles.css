@@ -64,11 +64,12 @@ button {
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
+    width: 99%;
 }
 
-article > section {
-    flex-basis: 25%;
-}
+/* article > section {
+    flex-basis: 15%;
+} */
 
 section > input {
     padding: 6px;
