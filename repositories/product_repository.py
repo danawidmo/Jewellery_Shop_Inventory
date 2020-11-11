@@ -44,7 +44,7 @@ def select_all_by_designer(designer_id):
 def select_all_by_type(type):
     products = []
 
-    sql = "SELECT * FROM prodcuts WHERE type = %s"
+    sql = "SELECT * FROM products WHERE type = %s"
     value = [type]
     results = run_sql(sql, value)
 
@@ -53,7 +53,7 @@ def select_all_by_type(type):
         designer = designer_repository.select(row['designer_id'])
         product = Product(row['product_name'], row['type'], row['description'],row['quantity'], row['cost'], row['price'], designer, row['id'] )
         products.append(product)
-        
+
     return products
 
 def select_types():
