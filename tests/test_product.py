@@ -5,7 +5,7 @@ from models.designer import Designer
 class TestProduct(unittest.TestCase):
     def setUp(self):
 
-        self.designer = Designer('Dana', 'dana@gmail.com', 1)
+        self.designer = Designer('Dana', 'dana@gmail.com','active', 1)
         self.product = Product('Gold Ring', 'ring','Golden ring with garnet stone', 10, 100, 200, self.designer, 3)
         self.product2 = Product('Silver brooch', 'brooch','Silver ring with garnet stone', 4, 100, 200, self.designer, 3)
         self.product3 = Product('Bronze Necklace','necklace', 'Bronze ring with garnet stone', 0, 100, 200, self.designer, 3)
@@ -26,6 +26,7 @@ class TestProduct(unittest.TestCase):
         self.assertEqual(200, self.product.price)
 
     def test_product_has_designer(self):
+  
         self.assertEqual(1, self.product.designer.id)
 
     def test_product_has_id(self):

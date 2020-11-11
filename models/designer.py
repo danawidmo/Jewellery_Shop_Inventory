@@ -1,7 +1,8 @@
 class Designer:
-    def __init__(self, designer_name, email, id = None):
+    def __init__(self, designer_name, email, status, id = None):
         self.designer_name = designer_name
         self.email = email
+        self.status = status
         self.id =id
 
     def detail(self):

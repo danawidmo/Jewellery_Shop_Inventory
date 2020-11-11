@@ -13,6 +13,7 @@ class Product:
         self.designer = designer
 
 
+
     def low_stock(self):
         low_quantity= 5
         if self.quantity <= low_quantity and self.quantity > 0:

@@ -5,7 +5,7 @@ from models.product import Product
 class TestDesigner(unittest.TestCase):
 
     def setUp(self):
-        self.designer = Designer('Claire', 'claire@gmail.com',2)
+        self.designer = Designer('Claire', 'claire@gmail.com','active', 2)
        
     def test_designer_has_designer_name(self):
         self.assertEqual('Claire', self.designer.designer_name)          
@@ -14,8 +14,10 @@ class TestDesigner(unittest.TestCase):
         self.assertEqual('claire@gmail.com', self.designer.email)
 
     def test_detail(self):
-        self.assertEqual('Name: Claire Email: claire@gmail.com', self.designer.designer_detail())
+        self.assertEqual('Name: Claire Email: claire@gmail.com', self.designer.detail())
     
     def test_designer_has_id(self):
         self.assertEqual(2, self.designer.id)
 
+    def test_status(self):
+        self.assertEqual('active', self.designer.status)
