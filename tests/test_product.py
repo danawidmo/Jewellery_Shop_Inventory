@@ -6,9 +6,9 @@ class TestProduct(unittest.TestCase):
     def setUp(self):
 
         self.designer = Designer('Dana', 'dana@gmail.com', 1)
-        self.product = Product('Gold Ring', 'Golden ring with garnet stone', 10, 100, 200, self.designer, 3)
-        self.product2 = Product('Silver Ring', 'Silver ring with garnet stone', 4, 100, 200, self.designer, 3)
-        self.product3 = Product('Bronze Ring', 'Bronze ring with garnet stone', 0, 100, 200, self.designer, 3)
+        self.product = Product('Gold Ring', 'ring','Golden ring with garnet stone', 10, 100, 200, self.designer, 3)
+        self.product2 = Product('Silver brooch', 'brooch','Silver ring with garnet stone', 4, 100, 200, self.designer, 3)
+        self.product3 = Product('Bronze Necklace','necklace', 'Bronze ring with garnet stone', 0, 100, 200, self.designer, 3)
 
     def test_product_has_product_name(self):
         self.assertEqual('Gold Ring', self.product.product_name)
@@ -30,6 +30,9 @@ class TestProduct(unittest.TestCase):
 
     def test_product_has_id(self):
         self.assertEqual(3, self.product.id)
+
+    def test_product_has_type(self):
+        self.assertEqual('brooch', self.product2.type)
 
     def test_low_stock(self):
         self.assertEqual(True, self.product2.low_stock())
