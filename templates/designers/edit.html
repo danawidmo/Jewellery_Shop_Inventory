@@ -1,18 +1,20 @@
 {% extends "base.html" %}
 {% block content%}
     <form action='/designers/{{designer.id}}', method="POST"></id>
-        <div>
+        <div class='form_row'>
             <label for='name'>Name:</label>
             <input type ='text' id='name' name='name' value="{{designer.name}}" required autofocus>
         </div>
-        <div>
+        <div class='form_row'>
             <label for='email'>Email:</label>
             <input type='text' id='email' name='email' value='{{designer.email}}' required autofocus>
         </div>
-        <div>
-            <label for='status'>Staus(active/inactive):</label>
+        <div class='form_row'>
+            <label for='status'>Staus (active/inactive):</label>
             <input type='text' id='status' name='status' value='{{designer.status}}' required autofocus>
         </div>
-        <button type="submit">Update</button>
+        <div class='form_row'>
+            <button type="submit">Update</button>
+        </div>
     </form>
 {% endblock %}

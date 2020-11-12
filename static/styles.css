@@ -37,7 +37,7 @@ select {
 }
 
 button {
-    font-weight: 500;
+    font-weight: 900;
     border: solid;
     padding: 5px;
     border-radius: 10px;
@@ -162,6 +162,8 @@ nav > ul > li {
     border-width: 1px;
     border-color: rgb(179, 187, 194);
     padding: 15px;
+    flex-basis: 25%;
+    margin-bottom: 20px;
 }
 
 .inventory_item img {
@@ -246,13 +248,9 @@ body > section >img {
     width: 50px;
 }
 
-
-
 .material-icons.red{ color: #8b2202; }
 .material-icons.green{ color: #346832; }
 .material-icons.orange{ color: #a75f0e; }
-
-
 
 .material-icons {
     border: solid;
@@ -262,10 +260,32 @@ body > section >img {
     background-color: rgb(236, 221, 193);
 }
 
+#designers_list{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
 .designers_list {
     display: flex;
-    justify-content: space-evenly;
+    align-items: center;
+
 }
+
+.designers_list h3{
+    flex: 1;
+  }
+
+  .designers_list p:first-of-type {
+      flex: 2;
+  }
+  .designers_list p {
+      flex: 3;
+  }
+  .designers_list div {
+      flex: 4;
+  }
 
 .quantity {
     display: flex;
@@ -284,5 +304,38 @@ body > section >img {
    color: #8b2202;
 }
 
+#add_new_designer {
+    font-weight: 900;
+    border: solid;
+    padding: 5px;
+    border-radius: 10px;
+    border-width: 1px;
+    background-color: rgb(236, 221, 193);
+    height: fit-content;
+}
 
+.form_row {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.5em;
+}
 
+.form_row > label {
+    padding: .5em 1em .5em 0;
+    flex: 1;
+    font-weight: 900;
+  }
+.form_row > input, .form_row select {
+    flex: 2;
+    padding: .5em;
+  }
+
+.form_row button {
+    flex: 2;
+    padding: .5em; 
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 900;
+    font-size: medium;
+}
+
+  

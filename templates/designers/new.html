@@ -1,14 +1,16 @@
 {% extends "base.html" %}
 {% block content%}
     <form action='/designers/new', method="POST"></id>
-        <div>
+        <div class='form_row'>
             <label for='name'>Name:</label>
             <input type ='text' id='name' name='name' placeholder='Name' required autofocus>
         </div>
-        <div>
+        <div class='form_row'>
             <label for='email'>Email:</label>
             <input type='text' id='email' name='email' placeholder='Email' required autofocus>
         </div>
-        <button type="submit">Add</button>
+        <div class='form_row'>
+            <button type="submit">Add</button>
+        </div>
     </form>
 {% endblock %}
