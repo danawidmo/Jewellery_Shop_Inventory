@@ -13,13 +13,25 @@ designer_blueprint = Blueprint('designers', __name__)
 def designers():
     designers = designer_repository.select_all()
     return render_template('designers/index.html',designers=designers)
+    
+# CREATE GET
+@designer_blueprint.route("/designers/new")
+def new():
+    return render_template("designers/new.html")
+
+# CREATE POST
+@designer_blueprint.route("/designers/new", methods = ['POST'])
+def create_designer():
+    name = request.form['name']
+    email = request.form['email']
+    status = 'active'
+    designer = Designer(name, email, status)
+    designer_repository.save(designer)
+    return redirect('/designers')
 
 # SHOW
 @designer_blueprint.route("/designers/<id>")
 def show_designer(id):
-    if id == 'new':
-        return render_template("designers/new.html")
-    else:
         designer = designer_repository.select(id)
         products = product_repository.select_all_by_designer(id)
         return render_template('designers/show.html', designer=designer, products=products)
@@ -36,6 +48,7 @@ def update_designer(id):
     name = request.form['name']
     email = request.form['email']
     status = request.form.getlist('status')
+    print(status)
     if status == []:
         status = 'inactive'
     else:
@@ -44,15 +57,7 @@ def update_designer(id):
     designer_repository.update(designer)
     return redirect('/designers')
 
-# CREATE POST
-@designer_blueprint.route("/designers/new", methods = ['POST'])
-def create_designer():
-    name = request.form['name']
-    email = request.form['email']
-    status = 'active'
-    designer = Designer(name, email, status)
-    designer_repository.save(designer)
-    return redirect('/designers')
+
 
 
 

@@ -6,4 +6,4 @@ class Designer:
         self.id =id
 
     def detail(self):
-        return f'Name: {self.name} Email: {self.email}'
+        return f'All products by {self.name}. Order more by email {self.email}.'

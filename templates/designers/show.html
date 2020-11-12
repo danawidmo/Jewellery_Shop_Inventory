@@ -12,7 +12,7 @@
               </a>
               <div class='name_by_designer'>
                  <p>{{product.name}}</p>
-                 <a href='designers/{{product.designer.id}}'>by {{product.designer.name}}</a>
+                 <p>by {{product.designer.name}}</p>
               </div>
            </div>
            <p>Type:{{product.type}}</p>
@@ -30,7 +30,6 @@
               {% endif %}
            </div>
            <div class='buttons'>
-              <button class="material-icons red">delete</button>
               <a href="/products/{{product.id}}/edit" class="material-icons orange">edit</a>
               <button class="material-icons green">add</button>
            </div>

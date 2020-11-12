@@ -178,7 +178,7 @@ nav > ul > li {
     font-style: italic;
     font-size: medium;
 }
-.name_by_designer p {
+.name_by_designer p{
     margin-top: 0px;
     margin-left: 5px;
     margin-bottom: 0px;
@@ -297,11 +297,11 @@ body > section >img {
 }
 
 .low_stock{
-    color: #a75f0e;
+    color: #c77a21;
 }
 
 .out_of_stock{
-   color: #8b2202;
+   color: #a02f0d;
 }
 
 #add_new_designer {
@@ -388,6 +388,10 @@ body > section >img {
 
     .form, form {
         margin-left: 0;
+    }
+
+    .designers_list {
+        margin-left: 0px;
     }
 }
   
