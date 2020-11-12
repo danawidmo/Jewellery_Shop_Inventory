@@ -35,7 +35,11 @@ def edit_designer(id):
 def update_designer(id):
     name = request.form['name']
     email = request.form['email']
-    status = request.form['status']
+    status = request.form.getlist('status')
+    if status == []:
+        status = 'inactive'
+    else:
+         status = 'active'
     designer = Designer(name, email, status, id)
     designer_repository.update(designer)
     return redirect('/designers')

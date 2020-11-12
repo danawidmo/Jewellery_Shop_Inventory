@@ -9,9 +9,9 @@
             <label for='email'>Email:</label>
             <input type='text' id='email' name='email' value='{{designer.email}}' required autofocus>
         </div>
-        <div class='form_row'>
-            <label for='status'>Staus (active/inactive):</label>
-            <input type='text' id='status' name='status' value='{{designer.status}}' required autofocus>
+        <div class='flag'>
+            <input type='checkbox' id='status' name='status' value='active' {% if designer.status == 'active'%} checked {% endif %}'autofocus>
+            <label for='status'>Active</label>
         </div>
         <div class='form_row'>
             <button type="submit">Update</button>

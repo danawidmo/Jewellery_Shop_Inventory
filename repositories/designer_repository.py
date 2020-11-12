@@ -13,7 +13,7 @@ def save(designer):
 
 def select_all():
     designers =[]
-    sql = "SELECT * from designers"
+    sql = "SELECT * from designers ORDER by id"
     results = run_sql(sql)
 
     for row in results:
