@@ -201,14 +201,33 @@ nav > ul > li {
 
 .cost_price p{
 margin-right: 10px;
-/* margin-top: 0px; */
-/* margin-bottom: 0px; */
 }
 
 .buttons {
     display: flex;
     justify-content: center;
     margin-top: 5px;
+}
+/* Inventory item single */
+
+#single{
+    display:flex;
+    justify-content: center;
+}
+
+.single_item{
+    width: fit-content;
+    margin-top: 1.5em;
+}
+
+.single_item img{
+    height: 100px;
+    width: 100px;
+}
+
+.single_item p {
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 form > div {
