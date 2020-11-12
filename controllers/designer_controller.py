@@ -17,9 +17,12 @@ def designers():
 # SHOW
 @designer_blueprint.route("/designers/<id>")
 def show_designer(id):
-    designer = designer_repository.select(id)
-    products = product_repository.select_all_by_designer(id)
-    return render_template('designers/show.html', designer=designer, products=products)
+    if id == 'new':
+        return render_template("designers/new.html")
+    else:
+        designer = designer_repository.select(id)
+        products = product_repository.select_all_by_designer(id)
+        return render_template('designers/show.html', designer=designer, products=products)
 
 # EDIT
 @designer_blueprint.route("/designers/<id>/edit")
@@ -28,7 +31,6 @@ def edit_designer(id):
     return render_template('designers/edit.html', designer=designer)
 
 # UPDATE
-
 @designer_blueprint.route("/designers/<id>", methods = ['POST'])
 def update_designer(id):
     name = request.form['name']
@@ -37,12 +39,6 @@ def update_designer(id):
     designer = Designer(name, email, status, id)
     designer_repository.update(designer)
     return redirect('/designers')
-
-# CREATE
-# GET
-@designer_blueprint.route("/designers/new")
-def new_designer():
-    return render_template("designers/new.html")
 
 # CREATE POST
 @designer_blueprint.route("/designers/new", methods = ['POST'])
