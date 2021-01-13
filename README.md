@@ -1,5 +1,15 @@
 # Jewellery Shop Inventory App
+
+## Tracks inventory products, filters products by designer and type, alerts to low and out of stock items, adds products and designers, displays markup on prices and marks inactive designers.
+
 Jewellery Shop Inventory App is a full stack application for my solo CodeClan project. It is written in python, runs on Flask and uses psycopg with PostgreSQL database. It allows the user to manage their shop inventory. Building this app consolidated knowledge and skills taught during the first module at CodeClan. 
+
+## Possible new features and improvements
+
+* Search feature
+* Filtering by type and designer using dropdown
+* Allowing products to have many types
+* Sorting products alphabetically
 
 ## Installation
 
@@ -39,32 +49,27 @@ You should see something similar to this:
 Click on the http link to view the app in a browser. 
 Your app is ready and running.
 
-## Usage
+## Screenshots
 
+### Inventory
 ![Inventory home page](https://github.com/DanaVarahi/screenshots/blob/main/Screenshot%202020-11-15%20at%2010.46.40.png)
 
-Jewellery Shop Inventory App allows the user to view all products, sort them by designer and by type. 
-
+### Inventory filtered by type: ring 
 ![Inventory sorted by type](https://github.com/DanaVarahi/screenshots/blob/main/sort-by-type.png)
 
-User can add and edit products. 
-
+### Adding new product
 ![Add Product](https://github.com/DanaVarahi/screenshots/blob/main/add-product.png)
 
-Jewellery Shop Inventory App displayes all designers.
-
+### Designers
 ![All designers](https://github.com/DanaVarahi/screenshots/blob/main/designers.png)
 
-User can also edit designer detail and mark designers as inactive so that they will not appear in the designer selection for new products.
-
+### Updating a designer
 ![Edit designer detail](https://github.com/DanaVarahi/screenshots/blob/main/edit-designer.png)
 
-The app calculates markup on product price automatically and displays it to the user. It also alerts the user to low and out of stock items.
-
+### Markup on products price and low and out of stock warning.
 ![Low and out of stock](https://github.com/DanaVarahi/screenshots/blob/main/low-stock.png)
 
-Jewellery Shop Inventory App is responsive and can be viewed on mobile devices.
-
+### Mobile view
 ![Mobile view](https://github.com/DanaVarahi/screenshots/blob/main/mobile.png)
 
 
