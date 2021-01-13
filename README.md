@@ -1,5 +1,5 @@
 # Jewellery Shop Inventory App
-Jewellery Shop Inventory App is an example of a fullstack application written in python. It runs on flask and uses psycopg with PostgreSQL database. It allows the user to manage their shop inventory.
+Jewellery Shop Inventory App is a full stack application for my solo CodeClan project. It is written in python, runs on Flask and uses psycopg with PostgreSQL database. It allows the user to manage their shop inventory. Building this app consolidated knowledge and skills taught during the first module at CodeClan. 
 
 ## Installation
 
@@ -67,10 +67,6 @@ Jewellery Shop Inventory App is responsive and can be viewed on mobile devices.
 
 ![Mobile view](https://github.com/DanaVarahi/screenshots/blob/main/mobile.png)
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
 
 ## License
 [Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/)
